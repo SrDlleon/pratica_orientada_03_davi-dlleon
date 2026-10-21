@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Novo livro</h1>
+  <form method="post">
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" name="titulo" required>
+    <br>
+    <label for="user_id">Usuário:</label>
+    <select id="user_id" name="user_id" required>
+      {% for usuario in usuarios %}
+        <option value="{{ usuario.id }}">{{ usuario.nome }}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <button type="submit">Salvar</button>
+  </form>
+{% endblock %}
